@@ -1,6 +1,7 @@
 # Spring MVC with MySQL Prototype
 
 This prototype will work with following technical specifications:
+
 1. Spring 4.1.4.
 2. Spring Security 3.2.5.
 3. Java 1.7
