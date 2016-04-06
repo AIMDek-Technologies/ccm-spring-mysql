@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/data/mongo 
+
+http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+
+http://www.springframework.org/schema/beans
+
+
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+
+
+http://www.springframework.org/schema/context
+
+
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+
+
+http://www.springframework.org/schema/tx
+
+
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <context:component-scan base-package="com.aimdek.ccm.test"/>
+    <context:annotation-config/>
+    <context:spring-configured/>
+    
+    <!-- Data Source Declaration -->
+    <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:database-config/database.properties</value>
+				<value>classpath:amazon-config/aws-credential.properties</value>
+			</list>
+		</property>
+		<property name="ignoreResourceNotFound" value="true"></property>
+	</bean>
+	
+	<bean id="userServiceMock" name="userService"  class="org.mockito.Mockito" factory-method="mock" >
+        <constructor-arg value="com.aimdek.ccm.service.impl.UsersServiceImpl"/>
+    </bean>
+    
+    <bean id="userDaoMock" name="userDao"  class="org.mockito.Mockito" factory-method="mock" >
+        <constructor-arg value="com.aimdek.ccm.dao.impl.UsersDaoImpl"/>
+    </bean>
+
+</beans>
+

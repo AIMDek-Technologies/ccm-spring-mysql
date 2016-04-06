@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="statement" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8dec729a-42b8-41b0-8092-20c3f2a536d4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="7"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="33563130-2ec5-4b01-a44b-168860d8d936">
+		<field name="transactionDate" class="java.lang.String"/>
+		<field name="description" class="java.lang.String"/>
+		<field name="amount" class="java.lang.Double"/>
+		<variable name="total" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="cardNumber" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="paymentDate" class="java.lang.String"/>
+	<parameter name="paymentDue" class="java.lang.String"/>
+	<parameter name="creditAvailable" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<group name="Group1"/>
+	<group name="Group2"/>
+	<group name="Group3"/>
+	<group name="Group4"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="11d50047-2812-4a3a-88ba-72a7a9c8e65a"/>
+				<staticText>
+					<reportElement x="180" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="eece6245-f24a-4598-a79f-e752e98f7636"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AIMDek Bank]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="229">
+			<staticText>
+				<reportElement x="360" y="10" width="195" height="20" uuid="c7da116a-3832-419c-97ef-9013ed0853a2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Send To]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="360" y="30" width="195" height="62" uuid="ec3cbe0e-42f7-485d-9ccb-401856bb286a"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="178" y="92" width="162" height="20" uuid="dbc422cc-921b-47d7-b16f-6ea697b54244"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDIT CARD STATEMENT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="116" width="555" height="1" uuid="a40f8d49-768f-4b64-9ab3-501152bdfa95"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="129" width="118" height="20" uuid="8c93ae23-2fee-493d-a8dd-49364ebca8cf"/>
+				<text><![CDATA[Card Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="149" width="118" height="20" uuid="af2babdf-0dd9-41df-8e13-c7f5d0a8a787"/>
+				<textFieldExpression><![CDATA[$P{cardNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="178" y="129" width="118" height="20" uuid="1db2a9b1-439b-494e-ac85-1f56c111729a"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="178" y="149" width="118" height="20" uuid="485bc33d-4e8d-4913-b6c3-35d1f7ccb578"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="129" width="118" height="20" uuid="189cae44-c07f-4d16-ac35-6000bdd7cf8b"/>
+				<text><![CDATA[Statement Date]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="340" y="149" width="118" height="20" uuid="971ae9af-a4d8-4d04-8a9f-763876324ae9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="181" width="118" height="20" uuid="b717953e-3916-44e2-a719-7c360586d4b0"/>
+				<text><![CDATA[Payment Due Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="201" width="118" height="20" uuid="f6b924a5-d5f3-4608-b78e-d52f64583954"/>
+				<textFieldExpression><![CDATA[$P{paymentDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="178" y="181" width="118" height="20" uuid="5daabffe-ac28-4522-8232-a2d9ec75f915"/>
+				<text><![CDATA[Payment Due]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="178" y="201" width="118" height="20" uuid="75879388-6f13-4868-a253-49c675965979"/>
+				<textFieldExpression><![CDATA[$P{paymentDue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="181" width="118" height="20" uuid="cfa040c1-b763-44e9-8ccd-49da7bb53e85"/>
+				<text><![CDATA[Credit Available]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="201" width="118" height="20" uuid="a44404cd-5462-4f7f-948e-ef16e1ac21b0"/>
+				<textFieldExpression><![CDATA[$P{creditAvailable}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="145">
+			<staticText>
+				<reportElement x="11" y="15" width="118" height="20" uuid="d83031b5-3031-4285-bd1d-8cfef054827f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[This Month Activity:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="11" y="45" width="270" height="80" uuid="c3aba2ed-5e16-41ac-bcf9-06f4dd3fff27"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="c667301f-fbf0-4e51-8efb-00324295e430">
+						<dataSourceExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="a9354d47-9513-40ef-8499-988096f8c882">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="4b07868f-9e61-4ccc-af32-9cb12736137a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Transaction Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="5c6b91f9-a39e-4e5a-92b1-734cab8fdb2f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{transactionDate}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="301" uuid="fa8842bf-43ef-4814-9dd3-a34adf0de98c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="301" height="30" uuid="f9567214-60c4-476c-b3a5-e17d4cff8ed8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Transaction Description]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="301" height="30" uuid="846fbc3a-9e13-4e0e-87e3-920521eef009"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="301" height="20" uuid="0f2d53cf-1a9c-4046-9a2a-b2f2489988be"/>
+								<textElement textAlignment="Left" verticalAlignment="Top"/>
+								<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="124" uuid="4fdce2d8-4a78-4737-b56d-44233240f8ab">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="30" uuid="e27ccbb0-de10-4487-8d0e-5ce222686a62"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Amount]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="124" height="30" uuid="983ec91a-98a3-4df8-9073-d4fa71b006f8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="124" height="20" uuid="b2c29482-2163-41d4-a3c7-3ac7fb0293fd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a82c8faf-a898-4bbb-83f0-bf6c9b1c1069"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="e353d0b2-4128-4864-b41a-e7437c761f5c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="e936be53-2b13-4769-8811-9a9fea9f34e0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

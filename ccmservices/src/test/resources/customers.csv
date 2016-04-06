@@ -1,0 +1,6 @@
+First name,Last name,Email,Date of Birth,Phone Number,Password,House name,Street,Area,City,State,Country,Zip code,Card number,Valid From Date,Valid To Date,CVV,Name on card,Credit limit,Royalty points
+First 1,Last 1,customer1@gmail.com,1/2/1980,989784584,Pass123$,House 1,Street 1,Area 1,Ahmedabad,Gujarat,India,380060,1234-1234-1234-0001,12/12/2013,12/12/2015,111,First 1 Last 1,25000,10
+First 2,Last 2,customer2@gmail.com,12/1/1980,989784584,Pass123$,House 2,Street 2,Area 2,Ahmedabad,Gujarat,India,380060,1234-1234-1234-0002,12/13/2013,12/13/2015,222,First 2 Last 2,25000,10
+First 3,Last 3,customer3@gmail.com,12/14/1980,989784584,Pass123$,House 3,Street 3,Area 3,Ahmedabad,Gujarat,India,380060,1234-1234-1234-0003,12/14/2013,12/14/2015,333,First 3 Last 3,25000,10
+First 4,Last 4,customer4@gmail.com,10/15/1980,989784584,Pass123$,House 4,Street 4,Area 4,Ahmedabad,Gujarat,India,380060,1234-1234-1234-0004,12/15/2013,12/15/2015,444,First 4 Last 4,25000,10
+First 5,Last 5,customer5@gmail.com,12/16/1980,989784584,Pass123$,House 5,Street 5,Area 5,Ahmedabad,Gujarat,India,380060,1234-1234-1234-0005,12/16/2013,12/16/2015,555,First 5 Last 5,25000,10
