@@ -22,12 +22,12 @@ Below are the steps that needs to be done to start this application running in y
 5. Import geographics master data
 	* Find CSV file in public folder of the application
 	* Run script to load data from CSV file (Find it in /public/sql_script.sql)
-6.) ```Maven Install ccm-dao-mysql```
-7.) ```Maven Install ccmservices```
-8.) ```Maven Install ccmspring```
-9.) Copy ccmspring.war file from \ccm-spring\ccmspring\target to $TOMCAT_HOME\webapp\ OR add maven plugin to deploy war file into tomcat webapp.
-10.) Start Tomcat server and hit http://localhost:8080/ccmspring/
-11.) Login with admin user
+6. ```Maven Install ccm-dao-mysql```
+7. ```Maven Install ccmservices```
+8. ```Maven Install ccmspring```
+9. Copy ccmspring.war file from \ccm-spring\ccmspring\target to $TOMCAT_HOME\webapp\ OR add maven plugin to deploy war file into tomcat webapp.
+10. Start Tomcat server and hit http://localhost:8080/ccmspring/
+11. Login with admin user
 
 ### Bulk upload customers and transactions
 1. Find **customers.csv/customers.xlsx** and **transactions.csv/transactions.xlsx** files in public folder.
